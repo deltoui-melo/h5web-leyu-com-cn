@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>信息索引 · 1xbet 资料整理页</title>
+  <style>
+    /* reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f1f3f6;
+      color: #2d2f33;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* cards and sections */
+    section {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+      border: 1px solid #e6e9ed;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s ease;
+    }
+    section:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    /* hero */
+    .hero {
+      background: #ffffff;
+      border-left: 4px solid #2563eb;
+      padding: 2.5rem 2.2rem;
+    }
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1e2126;
+      margin-bottom: 0.75rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #4e5159;
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+    }
+    .hero .meta-note {
+      font-size: 0.88rem;
+      color: #6d717a;
+      border-top: 1px solid #eef0f3;
+      padding-top: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    /* headings inside sections */
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1f2329;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eef0f3;
+      padding-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #2b2e35;
+      margin: 1.2rem 0 0.4rem;
+    }
+
+    p { margin-bottom: 0.9rem; color: #383b42; }
+
+    /* list */
+    ul {
+      list-style: none;
+      padding-left: 0.2rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+    ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.55rem;
+      color: #3b3e46;
+    }
+    ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* link style */
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border 0.15s;
+    }
+    a:hover {
+      border-bottom: 1px solid #1d4ed8;
+    }
+
+    /* faq compact */
+    .faq-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .faq-q {
+      font-weight: 500;
+      color: #1b1f26;
+      margin-bottom: 0.15rem;
+    }
+    .faq-a {
+      color: #50545e;
+      font-size: 0.95rem;
+    }
+
+    /* footer links */
+    .footer-links {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e6e9ed;
+      padding: 1.5rem 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .footer-links .copy {
+      font-size: 0.85rem;
+      color: #7b7f89;
+    }
+    .footer-links .ref {
+      font-size: 0.9rem;
+      color: #4e525b;
+    }
+    .footer-links a {
+      font-weight: 450;
+    }
+
+    /* responsive */
+    @media (max-width: 680px) {
+      body { padding: 1.2rem 0.8rem; }
+      section { padding: 1.4rem 1.2rem; }
+      .hero { padding: 1.6rem 1.2rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .footer-links { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 区 -->
+  <section class="hero">
+    <h1>资料整理 · 关于 1xbet 的信息索引</h1>
+    <div class="sub">
+      这里是一份围绕 <a href="https://cn-portal-1xbet.com">1xbet</a> 的内容汇编，侧重功能结构、使用场景与常见疑问的梳理。
+      页面以卡片分区呈现，方便快速浏览与参考。
+    </div>
+    <div class="meta-note">
+      本页为信息整理型落地页，内容基于公开资料归纳，不构成任何引导或承诺。
+    </div>
+  </section>
+
+  <!-- 优势区 / 特点说明 -->
+  <section>
+    <h2>功能特点与模块概览</h2>
+    <p>从界面布局与日常操作来看，<a href="https://cn-portal-1xbet.com">1xbet</a> 主要围绕以下几个方向组织内容：</p>
+    <ul>
+      <li><strong>赛事覆盖</strong> —— 涵盖多种体育项目及联赛，并提供即时比分与赛程统计。</li>
+      <li><strong>玩法类型</strong> —— 包含赛前预测、滚球、虚拟体育以及部分数字娱乐内容。</li>
+      <li><strong>账户管理</strong> —— 支持多种货币存取，提供历史记录和限额设置。</li>
+      <li><strong>界面语言</strong> —— 多语言切换，中文界面可选，并适配部分区域支付方式。</li>
+    </ul>
+    <p style="margin-top: 0.6rem;">以上分类仅为基础框架，实际使用中可依个人习惯深入各模块。</p>
+  </section>
+
+  <!-- 说明区 / 使用场景与资料整理 -->
+  <section>
+    <h2>资料整理：常见使用场景</h2>
+    <p>根据用户反馈以及公开讨论，以下场景出现频率较高：</p>
+    <ul>
+      <li>实时追踪足球、篮球等主流赛事数据，辅助信息收集；</li>
+      <li>利用滚球功能观察比赛进程中的变化；</li>
+      <li>通过账户明细核对交易记录与流水；</li>
+      <li>在移动端或桌面端切换，保持操作连贯。</li>
+    </ul>
+    <p>此外，平台定期更新赛事列表和赔率变动，信息量较大，建议以参考为主，结合多方数据综合判断。</p>
+    <p style="margin-top: 0.2rem;">熟悉界面逻辑后，可以更高效地定位所需功能。若初次接触，不妨先浏览各板块的说明文档。</p>
+  </section>
+
+  <!-- FAQ 摘要区 (4 条) -->
+  <section>
+    <h2>FAQ 摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">Q：是否支持中文界面？</div>
+      <div class="faq-a">支持。在语言设置中选择中文后，大部分菜单及提示会切换为中文，方便阅读。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：存取款一般如何处理？</div>
+      <div class="faq-a">平台提供多种方式，包括银行转账、电子钱包等，具体到账时间与手续费因支付渠道而异，建议查看帮助页面。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：账户安全设置有哪些？</div>
+      <div class="faq-a">可设置资金密码、登录保护以及提现白名单，另外建议定期修改密码并开启双重验证。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：赛事数据更新频率如何？</div>
+      <div class="faq-a">实时赛事通常延迟在数秒以内，数据由合作信息源提供，具体精度因赛事级别而有差别。</div>
+    </div>
+  </section>
+
+  <!-- 底部链接 / 附加信息 -->
+  <div class="footer-links">
+    <div class="ref">
+      <a href="https://cn-portal-1xbet.com">1xbet</a> · 信息索引页
+    </div>
+    <div class="copy">
+      本页面仅为资料整理，不涉及直接引导或操作。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
