@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再次来到斗地主 · 常来常新</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fc;
+            color: #1f2d3d;
+            line-height: 1.6;
+            padding: 0 16px;
+        }
+        .page-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 28px 0 48px;
+        }
+
+        /* hero 区 */
+        .hero {
+            background: linear-gradient(145deg, #e0f2f1, #b2dfdb);
+            border-radius: 32px;
+            padding: 48px 28px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.08);
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #00695c;
+            margin-bottom: 12px;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #2c4a4a;
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.5);
+            padding: 10px 18px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+        }
+
+        /* 网格卡片 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 24px 18px;
+            box-shadow: 0 4px 12px rgba(0, 96, 100, 0.06);
+            border: 1px solid #d4e8e6;
+            transition: all 0.2s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 128, 128, 0.08);
+            border-color: #80cbc4;
+        }
+        .card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00695c;
+            margin-bottom: 8px;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #2c3e3e;
+        }
+
+        /* 说明区 */
+        .explain {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 28px;
+            margin-bottom: 36px;
+            border: 1px solid #c8e6de;
+            box-shadow: 0 4px 10px rgba(0,80,80,0.04);
+        }
+        .explain h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #00695c;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .explain h2::before {
+            content: "📌";
+            font-size: 1.6rem;
+        }
+        .explain p {
+            margin-bottom: 14px;
+            color: #1f3a3a;
+        }
+        .explain a {
+            color: #00897b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #b2dfdb;
+            transition: border-color 0.15s;
+        }
+        .explain a:hover {
+            border-bottom-color: #00695c;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            background: #e0f2f1;
+            border-radius: 28px;
+            padding: 28px 26px;
+            margin-bottom: 36px;
+        }
+        .faq-item {
+            flex: 1 1 200px;
+        }
+        .faq-item .q {
+            font-weight: 600;
+            color: #004d40;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+        .faq-item .a {
+            font-size: 0.92rem;
+            color: #2b4a4a;
+            line-height: 1.5;
+        }
+
+        /* 底部链接区 */
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #c8e6de;
+            padding-top: 20px;
+            margin-top: 8px;
+        }
+        .bottom-links .site-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #00695c;
+            background: #d4ece8;
+            padding: 4px 18px;
+            border-radius: 40px;
+        }
+        .bottom-links .site-name a {
+            color: #00695c;
+            text-decoration: none;
+        }
+        .bottom-links .site-name a:hover {
+            text-decoration: underline;
+        }
+        .bottom-links .meta {
+            font-size: 0.85rem;
+            color: #3b5e5e;
+        }
+
+        /* 移动端友好 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero .sub {
+                font-size: 0.98rem;
+                padding: 8px 14px;
+            }
+            .grid-3 {
+                gap: 14px;
+            }
+            .card {
+                padding: 20px 14px;
+            }
+            .explain {
+                padding: 24px 18px;
+            }
+            .faq-summary {
+                padding: 22px 18px;
+                flex-direction: column;
+            }
+            .bottom-links {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- hero -->
+        <div class="hero">
+            <h1>再次回来，牌局依旧</h1>
+            <div class="sub">收藏这个页 · 常来常新 · 随时一局</div>
+        </div>
+
+        <!-- 优势区：网格卡片 -->
+        <div class="grid-3">
+            <div class="card">
+                <span class="icon">♠️</span>
+                <h3>随时能打</h3>
+                <p>网页端即开即玩，不用下载。无论电脑、平板还是手机，打开就能凑一桌。</p>
+            </div>
+            <div class="card">
+                <span class="icon">🔄</span>
+                <h3>持续更新</h3>
+                <p>规则、界面、匹配机制都在逐步优化。每次回来都可能发现新变化。</p>
+            </div>
+            <div class="card">
+                <span class="icon">⭐</span>
+                <h3>收藏不忘</h3>
+                <p>把地址存进书签，或者记在备忘录。想玩的时候，不用再到处找。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：从再次访问、收藏和持续关注的角度展开 -->
+        <div class="explain">
+            <h2>为什么值得再次回来</h2>
+            <p>
+                很多人第一次玩 <a href="https://portal-doudizhu.com">斗地主</a> 是因为朋友分享或临时搜索。 
+                但真正用得顺手、打得舒心，往往是从「第二次打开」开始的。
+            </p>
+            <p>
+                收藏这个链接，就是给自己留一个方便的入口。不需要每次重新搜索，不用记住冗长的地址。 
+                对局记录、常用设置、顺手的手感，都会因为持续使用而变得更自然。
+            </p>
+            <p>
+                这个页面本身也会随着时间做调整——界面细节、说明内容、快捷入口，都可能会变得更贴合习惯。 
+                如果你隔几周再回来，也许会看到不一样的信息布局或更清晰的指引。
+            </p>
+            <p>
+                保持关注的方式很简单：把当前网址存到书签栏，或者在手机桌面创建快捷方式。 
+                下次想打一局的时候，点开就能继续。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="q">💬 需要注册账号吗？</div>
+                <div class="a">不用注册，进入页面后直接开始匹配或创建房间。部分功能可能后续会提供可选的记录方式。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">📱 手机浏览器能玩吗？</div>
+                <div class="a">可以。页面针对移动端做了适配，竖屏横屏都支持，触控操作直接可用。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">🔖 怎样收藏最方便？</div>
+                <div class="a">桌面浏览器按 Ctrl+D 添加书签；手机 Safari 或 Chrome 选择「添加到主屏幕」。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">🕒 页面会经常变化吗？</div>
+                <div class="a">内容会不定期更新，主要是规则说明、界面优化和常见问题补充。核心功能保持稳定。</div>
+            </div>
+        </div>
+
+        <!-- 底部链接区 -->
+        <div class="bottom-links">
+            <div class="site-name">
+                <a href="https://portal-doudizhu.com">斗地主</a>
+            </div>
+            <div class="meta">
+                ｜ 网页版 · 即开即玩 ｜ 欢迎收藏
+            </div>
+        </div>
+    </div>
+</body>
+</html>
