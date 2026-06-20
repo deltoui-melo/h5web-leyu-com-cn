@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 — 日常的索引</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1f2a3a;
+            background: #f9fafc;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 深色头图 — 偏蓝黑的沉静调 */
+        .hero {
+            background: linear-gradient(145deg, #121e2c 0%, #1d2c3e 100%);
+            padding: 5rem 1.5rem 5.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -20%; left: -10%;
+            width: 60%; height: 80%;
+            background: radial-gradient(circle at 30% 40%, rgba(90, 160, 230, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 350;
+            letter-spacing: 3px;
+            color: #eef3fa;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 span {
+            font-weight: 500;
+            color: #92b9e3;
+        }
+
+        .hero .subhead {
+            margin-top: 1.2rem;
+            font-size: 1.1rem;
+            color: #b2c9df;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 正文区 — 浅色、宽松 */
+        .content {
+            max-width: 820px;
+            margin: 3rem auto 4rem;
+            padding: 0 1.8rem;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            background: #ffffff;
+            padding: 2.2rem 2.5rem 1.8rem;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0, 20, 30, 0.04);
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.3rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点卡片 — 安静陈列 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #ffffff;
+            padding: 1.6rem 1.4rem;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border-left: 3px solid #3e6d99;
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 8px 20px rgba(44, 90, 130, 0.06);
+            transform: translateY(-2px);
+            border-left-color: #1f5f8f;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 520;
+            margin-bottom: 0.5rem;
+            color: #1d3b55;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3f4f61;
+            line-height: 1.6;
+        }
+
+        /* 场景段落 + 引用语气 */
+        .scene-note {
+            background: #edf3fa;
+            padding: 2rem 2.2rem;
+            border-radius: 20px;
+            margin: 2rem 0 2rem;
+        }
+
+        .scene-note p {
+            margin-bottom: 1.1rem;
+        }
+
+        .scene-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scene-note strong {
+            color: #1f5077;
+            font-weight: 530;
+        }
+
+        /* FAQ 摘要 — 克制，两个问题 */
+        .faq-mini {
+            margin: 2.8rem 0 2rem;
+            border-top: 1px solid #dce3ec;
+            padding-top: 2rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #1d3b55;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            font-size: 1.02rem;
+            list-style: none;
+            display: inline-block;
+        }
+
+        .faq-mini summary::marker {
+            color: #3e6d99;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini details p {
+            margin: 0.5rem 0 1rem 0.2rem;
+            padding-left: 0.8rem;
+            border-left: 2px solid #b7cce0;
+            color: #2b4055;
+        }
+
+        /* 温和结尾 + 自然链接 */
+        .closing {
+            background: #ffffff;
+            padding: 2rem 2.2rem;
+            border-radius: 20px;
+            margin-top: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e8eef5;
+        }
+
+        .closing p {
+            font-size: 1rem;
+            color: #2b3f54;
+        }
+
+        /* 链接强调色 */
+        a {
+            color: #1f6a9e;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #0a3b5e;
+            border-bottom-color: #1f6a9e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero { padding: 3.5rem 1.2rem 4rem; }
+            .hero h1 { font-size: 2rem; }
+            .content { padding: 0 1rem; }
+            .intro-text { padding: 1.6rem 1.2rem; }
+            .feature-item { flex: 1 1 100%; }
+            .scene-note { padding: 1.5rem 1.2rem; }
+            .closing { padding: 1.5rem 1.2rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+            .feature-grid { gap: 2rem; }
+        }
+
+        /* 小装饰 */
+        .quiet-sep {
+            width: 40px; height: 2px;
+            background: #b7cce0;
+            margin: 1.8rem 0 1.2rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>有时只是需要一次<span>安静的对照</span></h1>
+    <p class="subhead">打开一个页面，不是为了猎奇，而是为了确认某个名字、一段说法、一条线索。</p>
+</section>
+
+<div class="content">
+
+    <div class="intro-text">
+        <p>搜索之前，我们常常已经知道要查什么。缺的只是那个恰好能提供对照的地方。</p>
+        <p>几年前我开始注意到，自己在工作里反复访问的站点其实不多——其中几个是资讯流，几个是论坛，还有一个是 <a href="https://indexs-leisu.com">雷速</a>。不是因为它有什么花哨的功能，而是每次需要核实或延伸某些信息时，它给出的结果往往更接近我原本想找的东西。</p>
+        <p>这种体验很难量化，但长久下来，它变成了一种下意识的路径。</p>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>查询的安静感</h3>
+            <p>没有铺满屏幕的弹窗或推荐流，页面结构清晰，焦点始终落在你输入的内容上。</p>
+        </div>
+        <div class="feature-item">
+            <h3>对照的便利</h3>
+            <p>并列显示、跨条目参考时，布局是克制的，不干扰视线。适合需要同时扫读多列信息的人。</p>
+        </div>
+        <div class="feature-item">
+            <h3>延伸阅读的线索</h3>
+            <p>条目下方的关联内容往往出乎意料，但又在逻辑之内，让人愿意顺着点开一两个。</p>
+        </div>
+    </div>
+
+    <div class="scene-note">
+        <p><strong>一个普通的下午</strong> · 我在整理某个项目的引用来源，需要确认几个英文名的常用译法。打开 <a href="https://indexs-leisu.com">雷速</a>，输入第一个名字，对照了三个不同语境下的记录；又顺带查了另一条术语的惯用缩写。整个过程不到十分钟，没有多余步骤。</p>
+        <p>这种「查一个，再顺带查另一个」的节奏，大概就是日常使用中最舒服的状态。</p>
+    </div>
+
+    <!-- FAQ 摘要，只放两个最常见的问题语气 -->
+    <div class="faq-mini">
+        <details>
+            <summary>这个网站适合哪些人？</summary>
+            <p>主要是经常需要做信息对照、术语核实、或者对某类条目有延伸查阅习惯的人。编辑、研究者、爱好者都可能在某个时刻觉得它顺手。</p>
+        </details>
+        <details>
+            <summary>内容更新频率如何？</summary>
+            <p>没有固定公告，但条目的补充与修订一直在进行。如果你发现某个条目需要更正或补充，通常有反馈通道。</p>
+        </details>
+    </div>
+
+    <div class="quiet-sep"></div>
+
+    <div class="closing">
+        <p>整理信息的方式有很多种，有人喜欢密集的仪表盘，有人偏爱简洁的列表。而我越来越觉得，一个好用的索引，就是那种你不需要学习怎么使用、也不需要说服自己去打开的东西。</p>
+        <p>它就在那里。偶尔想起，点进去，查完，关掉。不多不少。</p>
+        <p style="margin-top: 0.8rem; color: #4b627b;">—— 如果你也习惯在日常里留一个安静的对照入口，也许可以试试 <a href="https://indexs-leisu.com">雷速</a>。</p>
+    </div>
+
+</div>
+
+</body>
+</html>
